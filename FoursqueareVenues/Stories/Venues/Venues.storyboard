@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="09w-RF-4za">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Venues View Controller-->
+        <scene sceneID="fT6-zM-9th">
+            <objects>
+                <viewController storyboardIdentifier="VenuesViewController" id="Uzg-hu-N1w" customClass="VenuesViewController" customModule="FoursqueareVenues" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="itW-5j-aKC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view alpha="0.10000000149011612" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pv3-nW-5md">
+                                <rect key="frame" x="172" y="56" width="70" height="4"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="70" id="UCj-fZ-QAd"/>
+                                    <constraint firstAttribute="height" constant="4" id="a1O-WW-wF9"/>
+                                </constraints>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="7ue-Sp-eFE">
+                                <rect key="frame" x="0.0" y="76" width="414" height="820"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Pv3-nW-5md" firstAttribute="top" secondItem="Cr7-4e-SEN" secondAttribute="top" constant="12" id="BdP-gI-fir"/>
+                            <constraint firstItem="Pv3-nW-5md" firstAttribute="centerX" secondItem="itW-5j-aKC" secondAttribute="centerX" id="C7N-rg-7mY"/>
+                            <constraint firstItem="7ue-Sp-eFE" firstAttribute="leading" secondItem="Cr7-4e-SEN" secondAttribute="leading" id="Mca-at-1Vw"/>
+                            <constraint firstItem="Cr7-4e-SEN" firstAttribute="trailing" secondItem="7ue-Sp-eFE" secondAttribute="trailing" id="Ssh-YZ-cfn"/>
+                            <constraint firstItem="7ue-Sp-eFE" firstAttribute="top" secondItem="Pv3-nW-5md" secondAttribute="bottom" constant="16" id="cVV-hD-hIG"/>
+                            <constraint firstAttribute="bottom" secondItem="7ue-Sp-eFE" secondAttribute="bottom" id="wFX-FO-ZUM"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Cr7-4e-SEN"/>
+                    </view>
+                    <size key="freeformSize" width="414" height="896"/>
+                    <connections>
+                        <outlet property="venuesTableView" destination="7ue-Sp-eFE" id="k7a-cm-a0m"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kbM-eY-x0K" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="565" y="501"/>
+        </scene>
+        <!--Main Controller-->
+        <scene sceneID="TRu-ks-mJz">
+            <objects>
+                <viewController id="09w-RF-4za" customClass="MainController" customModule="FoursqueareVenues" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Z4B-7a-5Zq">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fe9-5V-Bgs">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="448"/>
+                                <connections>
+                                    <segue destination="C2g-QC-GT0" kind="embed" identifier="segueToMap" id="LXd-25-uZq"/>
+                                </connections>
+                            </containerView>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zvp-tm-rm9">
+                                <rect key="frame" x="0.0" y="448" width="414" height="448"/>
+                                <connections>
+                                    <segue destination="Uzg-hu-N1w" kind="embed" identifier="segueToList" id="ZJc-ZS-y2c"/>
+                                </connections>
+                            </containerView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="zvp-tm-rm9" firstAttribute="leading" secondItem="esl-Ei-eNG" secondAttribute="leading" id="G8x-AV-pex"/>
+                            <constraint firstAttribute="bottom" secondItem="zvp-tm-rm9" secondAttribute="bottom" id="H83-2b-kaJ"/>
+                            <constraint firstItem="esl-Ei-eNG" firstAttribute="trailing" secondItem="zvp-tm-rm9" secondAttribute="trailing" id="ZZc-zp-izh"/>
+                            <constraint firstItem="zvp-tm-rm9" firstAttribute="height" secondItem="Fe9-5V-Bgs" secondAttribute="height" id="Zrs-2r-pwN"/>
+                            <constraint firstItem="Fe9-5V-Bgs" firstAttribute="leading" secondItem="esl-Ei-eNG" secondAttribute="leading" id="dR6-c1-rov"/>
+                            <constraint firstItem="Fe9-5V-Bgs" firstAttribute="top" secondItem="Z4B-7a-5Zq" secondAttribute="top" id="dxx-1A-qgD"/>
+                            <constraint firstItem="zvp-tm-rm9" firstAttribute="top" secondItem="Fe9-5V-Bgs" secondAttribute="bottom" id="g0f-eJ-R8i"/>
+                            <constraint firstItem="esl-Ei-eNG" firstAttribute="trailing" secondItem="Fe9-5V-Bgs" secondAttribute="trailing" id="pPR-Vb-asp"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="esl-Ei-eNG"/>
+                    </view>
+                    <connections>
+                        <outlet property="drawerContentContainerView" destination="zvp-tm-rm9" id="7TU-Tt-yDu"/>
+                        <outlet property="primaryContentContainerView" destination="Fe9-5V-Bgs" id="d0f-7k-vWe"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ESt-Fp-PEE" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-506" y="154"/>
+        </scene>
+        <!--Map View Controller-->
+        <scene sceneID="OAN-1L-x2Q">
+            <objects>
+                <viewController storyboardIdentifier="MapViewController" id="C2g-QC-GT0" customClass="MapViewController" customModule="FoursqueareVenues" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="VS8-uX-Nnb">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="oJ3-N7-DVF">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="796"/>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="JwH-mE-Tcj" firstAttribute="trailing" secondItem="oJ3-N7-DVF" secondAttribute="trailing" id="28z-Yg-fDX"/>
+                            <constraint firstAttribute="bottom" secondItem="oJ3-N7-DVF" secondAttribute="bottom" constant="100" id="E56-Vz-uug"/>
+                            <constraint firstItem="oJ3-N7-DVF" firstAttribute="leading" secondItem="JwH-mE-Tcj" secondAttribute="leading" id="MEE-rX-bYf"/>
+                            <constraint firstItem="oJ3-N7-DVF" firstAttribute="top" secondItem="VS8-uX-Nnb" secondAttribute="top" id="ZE2-eg-Fly"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="JwH-mE-Tcj"/>
+                    </view>
+                    <size key="freeformSize" width="414" height="896"/>
+                    <connections>
+                        <outlet property="mapView" destination="oJ3-N7-DVF" id="2Bu-nM-xGL"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="U7p-8c-dis" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="562" y="-153"/>
+        </scene>
+    </scenes>
+</document>

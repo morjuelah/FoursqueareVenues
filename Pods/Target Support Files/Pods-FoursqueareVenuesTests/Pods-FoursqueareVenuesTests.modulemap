@@ -1,0 +1,6 @@
+framework module Pods_FoursqueareVenuesTests {
+  umbrella header "Pods-FoursqueareVenuesTests-umbrella.h"
+
+  export *
+  module * { export * }
+}

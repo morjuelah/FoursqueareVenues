@@ -1,0 +1,26 @@
+PODS:
+  - Alamofire (4.8.2)
+  - Pulley (2.7.0)
+  - SDWebImage (5.1.0):
+    - SDWebImage/Core (= 5.1.0)
+  - SDWebImage/Core (5.1.0)
+
+DEPENDENCIES:
+  - Alamofire
+  - Pulley
+  - SDWebImage
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Alamofire
+    - Pulley
+    - SDWebImage
+
+SPEC CHECKSUMS:
+  Alamofire: ae5c501addb7afdbb13687d7f2f722c78734c2d3
+  Pulley: 028ddcc7d2dcbc078d71b61b7eee8e786d72c14a
+  SDWebImage: fb387001955223213dde14bc08c8b73f371f8d8f
+
+PODFILE CHECKSUM: 3a74de91d16c34519e4f16ded3f41a8e0488e0c3
+
+COCOAPODS: 1.6.1
